@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 职业规划师</title>
+    <title>华南农业大学珠江学院 - AI 职业规划师</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand" onclick="showSection('home')">AI 职业规划师</div>
+            <div class="nav-brand" onclick="showSection('home')">
+                <span class="brand-icon">🐻</span> 深度熊 AI 规划师
+            </div>
             <div class="nav-toggle" onclick="toggleNav()">☰</div>
             <ul class="nav-menu">
                 <li><a href="#" onclick="showSection('home')">首页</a></li>
-                <li><a href="#" onclick="showSection('assessment')">职业测评</a></li>
+                <li><a href="#" onclick="showSection('assessment')">专业测评</a></li>
                 <li><a href="#" onclick="showSection('chat')">AI 咨询</a></li>
-                <li><a href="#" onclick="showSection('careers')">职业信息</a></li>
-                <li><a href="#" onclick="showSection('resume')">简历面试</a></li>
-                <li><a href="#" onclick="showSection('learning')">学习路线</a></li>
+                <li><a href="#" onclick="showSection('careers')">专业方向</a></li>
+                <li><a href="#" onclick="showSection('resume')">就业指导</a></li>
+                <li><a href="#" onclick="showSection('learning')">学习路径</a></li>
                 <li><a href="#" onclick="showSection('report')">规划报告</a></li>
             </ul>
         </div>
@@ -26,51 +28,52 @@
     <!-- ========== 首页 ========== -->
     <section id="page-home" class="page active">
         <div class="hero">
-            <h1>你的 AI 职业规划师</h1>
-            <p>利用人工智能，为你量身定制职业发展路径</p>
+            <div class="hero-badge">华南农业大学珠江学院</div>
+            <h1>深度熊 AI 规划师</h1>
+            <p>根据华珠专业特色，为你量身定制职业发展路径</p>
             <div class="hero-actions">
-                <button class="btn btn-primary" onclick="showSection('assessment')">开始职业测评</button>
+                <button class="btn btn-primary" onclick="showSection('assessment')">开始专业测评</button>
                 <button class="btn btn-secondary" onclick="showSection('chat')">AI 在线咨询</button>
             </div>
         </div>
         <div class="features">
             <div class="feature-card" onclick="showSection('assessment')">
                 <div class="feature-icon">📋</div>
-                <h3>职业测评</h3>
-                <p>基于兴趣、能力和性格的多维度评估</p>
+                <h3>专业测评</h3>
+                <p>基于华珠六大专业群的多维评估</p>
             </div>
             <div class="feature-card" onclick="showSection('chat')">
                 <div class="feature-icon">🤖</div>
                 <h3>AI 对话</h3>
-                <p>与 AI 职业顾问实时交流解惑</p>
+                <p>AI 职业顾问为你答疑解惑</p>
             </div>
             <div class="feature-card" onclick="showSection('careers')">
-                <div class="feature-icon">💼</div>
-                <h3>职业信息</h3>
-                <p>了解各行各业的详情与发展</p>
+                <div class="feature-icon">🎯</div>
+                <h3>专业方向</h3>
+                <p>了解华珠各专业详情与发展前景</p>
             </div>
             <div class="feature-card" onclick="showSection('resume')">
                 <div class="feature-icon">📝</div>
-                <h3>简历面试</h3>
+                <h3>就业指导</h3>
                 <p>简历优化与面试技巧指导</p>
             </div>
             <div class="feature-card" onclick="showSection('learning')">
                 <div class="feature-icon">📚</div>
-                <h3>学习路线</h3>
-                <p>为你规划高效学习路径</p>
+                <h3>学习路径</h3>
+                <p>各专业在校四年学习规划</p>
             </div>
             <div class="feature-card" onclick="showSection('report')">
                 <div class="feature-icon">📊</div>
                 <h3>规划报告</h3>
-                <p>生成个人专属职业规划</p>
+                <p>生成你的专属职业规划</p>
             </div>
         </div>
     </section>
 
-    <!-- ========== 职业测评 ========== -->
+    <!-- ========== 专业测评 ========== -->
     <section id="page-assessment" class="page">
-        <h2 class="page-title">职业测评</h2>
-        <p class="page-desc">回答以下问题，AI 将分析你的职业倾向</p>
+        <h2 class="page-title">专业兴趣测评</h2>
+        <p class="page-desc">回答以下问题，AI 将为你推荐最适合的华珠专业方向</p>
         <div id="assessment-container">
             <div id="question-area">
                 <div id="question-progress">
@@ -84,7 +87,7 @@
                 </div>
             </div>
             <div id="result-area" style="display:none">
-                <h3>测评结果</h3>
+                <h3>推荐结果</h3>
                 <div id="result-content"></div>
                 <button class="btn btn-primary" onclick="resetAssessment()">重新测评</button>
             </div>
@@ -94,11 +97,11 @@
     <!-- ========== AI 咨询 ========== -->
     <section id="page-chat" class="page">
         <h2 class="page-title">AI 职业咨询</h2>
-        <p class="page-desc">和 AI 职业顾问聊聊你的职业困惑</p>
+        <p class="page-desc">和 AI 职业顾问聊聊你的专业发展和就业方向</p>
         <div id="chat-container">
             <div id="chat-messages">
                 <div class="chat-msg ai-msg">
-                    <div class="msg-content">你好！我是你的 AI 职业顾问。有什么职业相关的问题我可以帮你？比如职业选择、转行建议、技能提升等。</div>
+                    <div class="msg-content">你好！我是深度熊 AI 规划师，专为华珠学子服务。关于专业选择、就业方向、考研深造等问题都可以问我！</div>
                 </div>
             </div>
             <div id="chat-input-area">
@@ -108,39 +111,41 @@
         </div>
     </section>
 
-    <!-- ========== 职业信息 ========== -->
+    <!-- ========== 专业方向 ========== -->
     <section id="page-careers" class="page">
-        <h2 class="page-title">职业信息库</h2>
-        <p class="page-desc">浏览各类职业的详细介绍</p>
+        <h2 class="page-title">华珠专业方向</h2>
+        <p class="page-desc">华南农业大学珠江学院六大专业群及对应职业方向</p>
         <div class="career-filters">
             <button class="filter-btn active" data-category="all" onclick="filterCareers('all')">全部</button>
-            <button class="filter-btn" data-category="tech" onclick="filterCareers('tech')">科技</button>
-            <button class="filter-btn" data-category="finance" onclick="filterCareers('finance')">金融</button>
-            <button class="filter-btn" data-category="medical" onclick="filterCareers('medical')">医疗</button>
-            <button class="filter-btn" data-category="education" onclick="filterCareers('education')">教育</button>
-            <button class="filter-btn" data-category="art" onclick="filterCareers('art')">艺术</button>
+            <button class="filter-btn" data-category="media" onclick="filterCareers('media')">影视传媒</button>
+            <button class="filter-btn" data-category="design" onclick="filterCareers('design')">艺术设计</button>
+            <button class="filter-btn" data-category="it" onclick="filterCareers('it')">信息技术</button>
+            <button class="filter-btn" data-category="business" onclick="filterCareers('business')">经济管理</button>
+            <button class="filter-btn" data-category="humanities" onclick="filterCareers('humanities')">人文教育</button>
+            <button class="filter-btn" data-category="sports" onclick="filterCareers('sports')">体育健康</button>
         </div>
         <div id="career-list"></div>
     </section>
 
-    <!-- ========== 简历面试 ========== -->
+    <!-- ========== 就业指导 ========== -->
     <section id="page-resume" class="page">
-        <h2 class="page-title">简历与面试</h2>
-        <p class="page-desc">简历优化建议与面试准备技巧</p>
+        <h2 class="page-title">就业指导</h2>
+        <p class="page-desc">华珠毕业生简历优化与面试准备指南</p>
         <div class="resume-tabs">
             <button class="tab-btn active" onclick="switchResumeTab('resume')">简历优化</button>
             <button class="tab-btn" onclick="switchResumeTab('interview')">面试准备</button>
+            <button class="tab-btn" onclick="switchResumeTab('career')">就业方向</button>
         </div>
         <div id="resume-tab-content"></div>
         <div id="resume-tips"></div>
     </section>
 
-    <!-- ========== 学习路线 ========== -->
+    <!-- ========== 学习路径 ========== -->
     <section id="page-learning" class="page">
-        <h2 class="page-title">学习路线</h2>
-        <p class="page-desc">根据目标职业定制的学习路径</p>
+        <h2 class="page-title">专业学习路径</h2>
+        <p class="page-desc">华珠各专业四年学习规划建议</p>
         <div class="learning-select">
-            <label for="career-select">选择目标职业：</label>
+            <label for="career-select">选择你的专业：</label>
             <select id="career-select" onchange="showLearningPath()"></select>
         </div>
         <div id="learning-path"></div>
@@ -149,21 +154,30 @@
     <!-- ========== 规划报告 ========== -->
     <section id="page-report" class="page">
         <h2 class="page-title">职业规划报告</h2>
-        <p class="page-desc">基于你的测评结果生成个人专属报告</p>
+        <p class="page-desc">基于你的信息生成个人专属职业规划报告</p>
         <div class="report-form">
             <label>你的姓名：</label>
             <input type="text" id="report-name" placeholder="请输入姓名">
+            <label>你的专业：</label>
+            <select id="report-major"></select>
+            <label>你的年级：</label>
+            <select id="report-grade">
+                <option value="大一">大一</option>
+                <option value="大二">大二</option>
+                <option value="大三">大三</option>
+                <option value="大四">大四</option>
+            </select>
             <label>你的目标职业：</label>
-            <input type="text" id="report-goal" placeholder="例如：前端工程师">
+            <input type="text" id="report-goal" placeholder="例如：编导、UI 设计师">
             <label>你的当前技能（逗号分隔）：</label>
-            <input type="text" id="report-skills" placeholder="例如：Python, JavaScript, 沟通能力">
+            <input type="text" id="report-skills" placeholder="例如：Python, PS, 沟通能力">
             <button class="btn btn-primary" onclick="generateReport()">生成报告</button>
         </div>
         <div id="report-output" style="display:none"></div>
     </section>
 
     <footer class="footer">
-        <p>AI 职业规划师 &copy; 2026 | 用 AI 点亮你的职业之路</p>
+        <p>深度熊 AI 规划师 &copy; 2026 | 华南农业大学珠江学院 &mdash; 用 AI 点亮你的职业之路</p>
     </footer>
 
     <script src="main.js"></script>
